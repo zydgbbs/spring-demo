@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.zydgbbs.spring.ioc.domain.Address">
+        <property name="addr" value="浙江杭州"/>
+    </bean>
+
+    <bean id="student" class="com.zydgbbs.spring.ioc.domain.Student">
+        <property name="name" value="张三"/>
+        <property name="address" ref="address"/>
+        <!--数组-->
+        <property name="books">
+            <array>
+                <value>英语</value>
+                <value>政治</value>
+                <value>高数</value>
+            </array>
+        </property>
+        <!--List列表-->
+        <property name="hobbys">
+            <list>
+                <value>电影</value>
+                <value>游泳</value>
+            </list>
+        </property>
+        <!--键值对map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="123456789012345678"></entry>
+                <entry key="银行卡" value="123456"/>
+            </map>
+        </property>
+        <!--set集合-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>COC</value>
+                <value>BOB</value>
+            </set>
+        </property>
+        <!--null-->
+        <property name="wife">
+            <null/>
+        </property>
+        <!--properties-->
+        <property name="info">
+            <props>
+                <prop key="学号">20129999</prop>
+                <prop key="性别">男</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

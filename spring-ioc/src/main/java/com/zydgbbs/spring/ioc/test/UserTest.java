@@ -9,5 +9,7 @@ public class UserTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         User user = context.getBean("user",User.class);
         user.show();
+        User user2 = context.getBean("user2",User.class);
+        user2.show();
     }
 }
