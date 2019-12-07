@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dog" class="com.zydgbbs.spring.ioc.domain.Dog"/>
+    <bean id="cat" class="com.zydgbbs.spring.ioc.domain.Cat"/>
+
+    <!--<bean id="person" class="com.zydgbbs.spring.ioc.domain.Person">
+        <property name="cat" ref="cat"/>
+        <property name="dog" ref="dog"/>
+        <property name="name" value="张三"/>
+    </bean>-->
+    <!--会自动在容器上下文中查找，和自己对象set方法后面的值对应的bean id。-->
+    <!--<bean id="person" class="com.zydgbbs.spring.ioc.domain.Person" autowire="byName">
+        <property name="name" value="张三"/>
+    </bean>-->
+    <!--会自动在容器上下文中查找，和自己对象属性类型相同的bean-->
+    <!--<bean id="person" class="com.zydgbbs.spring.ioc.domain.Person" autowire="byType">
+        <property name="name" value="张三"/>
+    </bean>-->
+    <bean id="person" class="com.zydgbbs.spring.ioc.domain.Person" autowire="">
+        <property name="name" value="张三"/>
+    </bean>
+
+</beans>
