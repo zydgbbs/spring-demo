@@ -1,7 +1,14 @@
 package com.zydgbbs.spring.ioc.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Person {
+
+    @Autowired
     private Cat cat;
+    @Autowired
+    @Qualifier("dog2")
     private Dog dog;
     private String name;
 
