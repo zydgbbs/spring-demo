@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="userService" class="com.zydgbbs.spring.aop.service.UserServiceImpl"/>
+    <bean id="log" class="com.zydgbbs.spring.aop.log.Log"/>
+    <bean id="afterLog" class="com.zydgbbs.spring.aop.log.AfterLog"/>
+
+    <!--方式三：注解-->
+    <bean id="annotationPointCut" class="com.zydgbbs.spring.aop.diy.AnnotationPointCut"/>
+    <!--开启注解支持,代理方式，proxy-target-class：false，默认，jdk动态代理，true，cglib动态代理-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
+
+</beans>
