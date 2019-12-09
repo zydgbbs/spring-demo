@@ -12,6 +12,7 @@
         <module>spring-helloworld</module>
         <module>spring-ioc</module>
         <module>spring-aop</module>
+        <module>spring-transaction</module>
     </modules>
 
     <dependencies>
