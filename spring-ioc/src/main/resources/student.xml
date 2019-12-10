@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util.xsd">
 
     <bean id="address" class="com.zydgbbs.spring.ioc.domain.Address">
         <property name="addr" value="浙江杭州"/>
     </bean>
+
+    <util:list id="hobbysUtil">
+        <value>电影</value>
+        <value>游泳</value>
+    </util:list>
 
     <bean id="student" class="com.zydgbbs.spring.ioc.domain.Student">
         <property name="name" value="张三"/>
@@ -20,12 +28,13 @@
             </array>
         </property>
         <!--List列表-->
-        <property name="hobbys">
+        <!--<property name="hobbys">
             <list>
                 <value>电影</value>
                 <value>游泳</value>
             </list>
-        </property>
+        </property>-->
+        <property name="hobbys" ref="hobbysUtil"/>
         <!--键值对map-->
         <property name="card">
             <map>
