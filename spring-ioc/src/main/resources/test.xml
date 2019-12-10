@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--<bean id="user" class="com.zydgbbs.spring.ioc.domain.User" name="user2,user3,user4" abstract="true">
+        <constructor-arg name="name" value="张三"/>
+    </bean>-->
 
     <bean id="user" class="com.zydgbbs.spring.ioc.domain.User" name="user2,user3,user4">
         <constructor-arg name="name" value="张三"/>
     </bean>
+
+   <!-- <bean id="user6" parent="user" depends-on="user"/>-->
+    <!--user6继承了user的所有属性-->
+    <bean id="user6" parent="user"/>
+
+    <!--spring EL-->
+    <!--字面量标识-->
+    <!--<bean id="spel" abstract="true">
+        &lt;!&ndash;整数&ndash;&gt;
+        <property name="count" value="#{9}"/>
+        &lt;!&ndash;小数&ndash;&gt;
+        <property name="frequency" value="#{99.9}"/>
+        &lt;!&ndash;科学计数法&ndash;&gt;
+        <property name="capacity" value="#{1e9}"/>
+        &lt;!&ndash;Sring可以使用单引号或者双引号作为字符串的定界符号&ndash;&gt;
+        <property name="name" value="#{'zydgbbs'}"/>
+        <property name='name' value='#{"zydgbbs"}'/>
+        &lt;!&ndash;Boolean&ndash;&gt;
+        <property name="enabled" value="#{false}"/>
+
+        &lt;!&ndash;引用其他对象&ndash;&gt;
+        <property name="prefix" value="#{prefixGenerator}"/>
+        &lt;!&ndash;引用其他对象的属性&ndash;&gt;
+        <property name="suffix" value="#{prefixGenerator.suffix}"/>
+        &lt;!&ndash;引用其他方法&ndash;&gt;
+        <property name="suffix" value="#{prefixGenerator.toString()}"/>
+        <property name="suffix" value="#{prefixGenerator.toString().toUpperCase()}"/>
+
+        &lt;!&ndash;支持：+,-,*,/,%,^,字符串拼接+,<,>,==,<=,>=,lt,gt,eq,le,ge等操作&ndash;&gt;
+        <property name="adjustedAmount" value="#{counter.total+40}"/>
+        <property name="adjustedAmount" value="#{counter.total-40}"/>
+        <property name="circumference" value="#{2*T(java.lang.Math).PI * circle.radius}"/>
+        <property name="average" value="#{counter.total/counter.count}"/>
+        <property name="remainder" value="#{counter.total%counter.count}"/>
+        <property name="area" value="#{T(java.lang.Math).PI*circle.radius^2}"/>
+
+
+
+    </bean>-->
 
 </beans>
