@@ -17,4 +17,7 @@
         <constructor-arg value="ford"/>
     </bean>
 
+    <!--通过FactoryBean配置-->
+    <bean id="car3" class="com.zydgbbs.spring.ioc.factory.CarFactoryBean"></bean>
+
 </beans>

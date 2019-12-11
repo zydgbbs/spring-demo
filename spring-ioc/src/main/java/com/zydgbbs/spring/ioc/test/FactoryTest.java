@@ -11,5 +11,7 @@ public class FactoryTest {
         System.out.println(car1);
         Car car2 = ctx.getBean("car2",Car.class);
         System.out.println(car2);
+        Car car3 = ctx.getBean("car3",Car.class);
+        System.out.println(car3);
     }
 }
